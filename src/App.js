@@ -5,7 +5,6 @@ import './App.css';
 class App extends Component {
  constructor(props) {
     super(props);
-    // this.updateCoordinates = this.updateCoordinates.bind(this)
     this.state = {
       lat:"",
       lon:"",
@@ -52,6 +51,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           test data- lat:{this.state.lat} && lon:{this.state.lon}
+        </p>
+        <p>
+          temperature:{this.state.temp}<br/>
+          condition:{this.state.cond}
         </p>
       </div>
       </div>
