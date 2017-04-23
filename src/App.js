@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,10 +26,19 @@ class App extends Component {
 
       function success(pos) {
         var crd = pos.coords;
+        var key = 'c21743171e1a42f4b37309dbef454a59';
         this.setState({
           lat: crd.latitude,
           lon: crd.longitude
         });
+            axios.get('https://api.darksky.net/forecast/'+key+'/'+this.state.lat+','+this.state.lat).then(function (response) {
+      console.log(response);
+      // quote = response.data[0].content;
+      // quote = quote.replace("<p>","");
+      // quote = quote.replace("</p>","");
+      // source = "- ".concat(response.data[0].title);
+      // component.setState({temp: quote, cond: source});
+    });
       };
 
       function error(err) {
