@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "This will function as an api proxy server for darksky api calls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jimmy Francis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
