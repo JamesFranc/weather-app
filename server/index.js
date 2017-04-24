@@ -6,16 +6,12 @@ app.set('port', process.env.PORT || 3001);
 
 //Handler function is passed a request and response objects
 app.get('/',function(req,res){
-    //end the request when handling is complete
-
-    // res.send('One day this will query the DarkSky API');
-    request('https://api.darksky.net/forecast/'+key+'/33.0731,-96.8217', function (error, response, body) {
+    var coordinates = req.state.lat+','+req.query.longitude;
+    request('https://api.darksky.net/forecast/'+key+'/'+coordinates, function (error, response, body) {
         console.log('error:', error); 
-        console.log('statusCode:', response && response.statusCode); 
-        // console.log('body:', body);
-        res.send(body);
+        console.log('statusCode:', response && response.statusCode);  
+        res.status(200).json(payload);
     });
-    // res.end();
 });
 
 app.listen(3001, function () {

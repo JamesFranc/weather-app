@@ -60,7 +60,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-          test data- lat:{this.state.lat} && lon:{this.state.lon}
+          test data- <br/>lat:{this.state.lat} <br/>lon:{this.state.lon}
         </p>
         <p>
           temperature:{this.state.temp}<br/>
